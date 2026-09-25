@@ -13,7 +13,7 @@ import {
   Terminal,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -47,23 +47,6 @@ const CONTACT_EMAIL_PLACEHOLDER = "update-me@example.com";
 
 function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>("[data-reveal]");
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    sections.forEach((section) => section.classList.add("reveal-ready"));
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          observer.unobserve(entry.target);
-        }
-      }),
-      { threshold: 0.12 },
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">

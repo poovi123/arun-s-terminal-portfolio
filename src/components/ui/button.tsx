@@ -19,7 +19,7 @@ const buttonVariants = cva(
         terminal: "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/85",
         terminalOutline:
           "border border-accent bg-transparent text-accent hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground",
-        resume: "bg-foreground text-background hover:-translate-y-0.5 hover:bg-foreground/90",
+        resume: "bg-foreground text-background hover:-translate-y-0.5 hover:bg-foreground/90 disabled:opacity-100",
       },
       size: {
         default: "h-9 px-4 py-2",
